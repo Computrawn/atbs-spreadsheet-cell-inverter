@@ -8,6 +8,7 @@ file_name = input("Please enter filename here: ")
 
 
 def cell_inverter(document):
+    """Opens xlsx file, inverts its cells and saves the inverted file."""
     wb = openpyxl.load_workbook(f"{document}.xlsx")
     sheet = wb.active
     # TODO: write nested loops to invert document cells.
