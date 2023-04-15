@@ -6,7 +6,12 @@ import openpyxl
 
 file_name = input("Please enter filename here: ")
 
-wb = openpyxl.load_workbook(file_name)
-sheet = wb.active
 
-wb.save(file_name)
+def cell_inverter(document):
+    wb = openpyxl.load_workbook(f"{document}.xlsx")
+    sheet = wb.active
+    # TODO: write nested loops to invert document cells.
+    wb.save(f"{document}_inverted.xlsx")
+
+
+cell_inverter(file_name)
