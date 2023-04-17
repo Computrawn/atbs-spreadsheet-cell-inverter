@@ -11,7 +11,7 @@ xy_list = []
 
 def cell_inverter(document):
     """Opens xlsx file, casts the cells into list of lists data structure
-    and writes the inverted data to a new worrkbook."""
+    and writes the inverted data to a new workbook."""
     wb = openpyxl.load_workbook(f"{document}.xlsx")
     sheet = wb.active
 
