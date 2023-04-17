@@ -12,6 +12,7 @@ xy_list = []
 def cell_inverter(document):
     """Opens xlsx file, casts the cells into list of lists data structure
     and writes the inverted data to a new workbook."""
+
     wb = openpyxl.load_workbook(f"{document}.xlsx")
     sheet = wb.active
 
@@ -24,10 +25,11 @@ def cell_inverter(document):
 
     inv_wb = openpyxl.Workbook()
     inv_sheet = inv_wb.active
-    for y in range(1, sheet.max_column + 1):
-        for x in range(1, sheet.max_row + 1):
-            letter = get_column_letter(x)
-            inv_sheet[f"{letter}{y}"] = xy_list[y - 1][x - 1]
+
+    for y_value in range(1, sheet.max_column + 1):
+        for x_value in range(1, sheet.max_row + 1):
+            letter = get_column_letter(x_value)
+            inv_sheet[f"{letter}{y_value}"] = xy_list[y_value - 1][x_value - 1]
 
     inv_wb.save(f"{document}_inverted.xlsx")
 
