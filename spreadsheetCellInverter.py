@@ -10,7 +10,8 @@ xy_list = []
 
 
 def cell_inverter(document):
-    """Opens xlsx file, inverts its cells and saves the inverted file."""
+    """Opens xlsx file, casts the cells into list of lists data structure
+    and writes the inverted data to a new worrkbook."""
     wb = openpyxl.load_workbook(f"{document}.xlsx")
     sheet = wb.active
 
