@@ -15,6 +15,7 @@ logging.disable(logging.CRITICAL)  # Note out to enable logging.
 
 
 def main() -> None:
+    """Call cell_inverter on user-defined file in cwd."""
     cell_inverter(input("Please enter filename here: "))
 
 
