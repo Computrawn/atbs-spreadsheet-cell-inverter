@@ -14,6 +14,10 @@ logging.basicConfig(
 logging.disable(logging.CRITICAL)  # Note out to enable logging.
 
 
+def main() -> None:
+    cell_inverter(input("Please enter filename here: "))
+
+
 def cell_inverter(document: str) -> None:
     """Opens xlsx file, casts the cells into list of lists data structure
     and writes the inverted data to a new workbook."""
@@ -38,10 +42,6 @@ def cell_inverter(document: str) -> None:
             ]
 
     inv_wb.save(f"{document}_inverted.xlsx")
-
-
-def main() -> None:
-    cell_inverter(input("Please enter filename here: "))
 
 
 if __name__ == "__main__":
